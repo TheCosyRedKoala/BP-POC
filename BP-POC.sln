@@ -3,12 +3,46 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D935BB7-1927-4945-B522-E4E855C13EF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{19800324-E51C-4FD3-94E8-94A40E455F4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "management", "management", "{6CD9727A-ADCA-4DBF-AF2A-324EF0E333AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sales", "sales", "{77CABB9C-7909-4210-9296-9B0834A04AAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Domain", "src\shared\BP-POC.Domain\BP-POC.Domain.csproj", "{269F2162-79EC-48D8-98AE-2F948A1FD838}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E82E60E0-6CC3-4CE9-93B8-BFBAD98253AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Domain.Tests", "tests\BP-POC.Domain.Tests\BP-POC.Domain.Tests.csproj", "{6F5F0C3B-E5AE-4DBA-AC69-E3C39FE175C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{269F2162-79EC-48D8-98AE-2F948A1FD838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{269F2162-79EC-48D8-98AE-2F948A1FD838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{269F2162-79EC-48D8-98AE-2F948A1FD838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{269F2162-79EC-48D8-98AE-2F948A1FD838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F5F0C3B-E5AE-4DBA-AC69-E3C39FE175C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F5F0C3B-E5AE-4DBA-AC69-E3C39FE175C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F5F0C3B-E5AE-4DBA-AC69-E3C39FE175C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F5F0C3B-E5AE-4DBA-AC69-E3C39FE175C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19800324-E51C-4FD3-94E8-94A40E455F4F} = {8D935BB7-1927-4945-B522-E4E855C13EF6}
+		{6CD9727A-ADCA-4DBF-AF2A-324EF0E333AD} = {8D935BB7-1927-4945-B522-E4E855C13EF6}
+		{77CABB9C-7909-4210-9296-9B0834A04AAA} = {8D935BB7-1927-4945-B522-E4E855C13EF6}
+		{269F2162-79EC-48D8-98AE-2F948A1FD838} = {19800324-E51C-4FD3-94E8-94A40E455F4F}
+		{6F5F0C3B-E5AE-4DBA-AC69-E3C39FE175C8} = {E82E60E0-6CC3-4CE9-93B8-BFBAD98253AA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B2CD9A9-59C8-4673-A9B7-0F5AF69AEDA1}
 	EndGlobalSection
 EndGlobal
