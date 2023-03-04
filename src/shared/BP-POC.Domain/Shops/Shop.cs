@@ -16,6 +16,10 @@ public class Shop
     /// </summary>
     public IReadOnlyList<Sale> Sales => _sales.AsReadOnly();
     /// <summary>
+    /// Returns a list of sales that were made today
+    /// </summary>
+    public IReadOnlyList<Sale> TodaySales => _sales.Where(s => s.DateOfSale.Date == DateTime.UtcNow.Date).ToList().AsReadOnly();
+    /// <summary>
     /// Returns the list of printers as an IReadOnlyList
     /// </summary>
     public IReadOnlyList<Printer> Printers => _printers.AsReadOnly();
