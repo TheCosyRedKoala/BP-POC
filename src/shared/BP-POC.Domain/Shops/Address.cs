@@ -8,6 +8,14 @@ public class Address
     public string PostalCode { get; }
     public string Country { get; }
 
+    /// <summary>
+    /// Domain constructor
+    /// </summary>
+    /// <param name="addressLine1">The first address line of the address</param>
+    /// <param name="addressLine2">The second address line of the address</param>
+    /// <param name="city">The city of the address</param>
+    /// <param name="postalCode">The postcode of a city of the address</param>
+    /// <param name="country">The country of the address</param>
     public Address(string addressLine1, string? addressLine2, string city, string postalCode, string country)
     {
         AddressLine1 = Guard.Against.NullOrWhiteSpace(addressLine1, nameof(addressLine1));
