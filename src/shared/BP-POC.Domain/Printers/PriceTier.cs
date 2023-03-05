@@ -1,6 +1,8 @@
-﻿namespace BP_POC.Domain.Printers;
+﻿using BP_POC.Domain.Common;
 
-public class PriceTier
+namespace BP_POC.Domain.Printers;
+
+public class PriceTier : ValueObject
 {
     public int Floor { get; private set; }
     public int Ceiling { get; private set; }
@@ -17,5 +19,12 @@ public class PriceTier
         Floor = Guard.Against.Negative(floor, nameof(floor));
         Ceiling = Guard.Against.NegativeOrZero(ceiling, nameof(ceiling));
         Price = Guard.Against.NegativeOrZero(price, nameof(price));
+    }
+
+    protected override IEnumerable<object?> GetEqualityComponents()
+    {
+        yield return Floor;
+        yield return Ceiling;
+        yield return Price;
     }
 }
