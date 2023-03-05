@@ -1,8 +1,9 @@
-﻿using BP_POC.Domain.Printers;
+﻿using BP_POC.Domain.Common;
+using BP_POC.Domain.Printers;
 
 namespace BP_POC.Domain.Sales;
 
-public class Sale
+public class Sale : Entity
 {
     public DateTime DateOfSale { get; private set; }
     public double TotalAmount { get; }
