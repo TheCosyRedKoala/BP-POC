@@ -1,7 +1,4 @@
-﻿using BP_POC.Management.Shared.Printers;
-using BP_POC.Management.Shared.Sales;
-
-namespace BP_POC.Management.Shared.Shops;
+﻿namespace BP_POC.Management.Shared.Shops;
 
 public interface IShopService
 {
@@ -13,9 +10,4 @@ public interface IShopService
     // Printer
     Task<int> CreatePrinterAsync(ShopRequest.PrinterMutate request);
     Task DeletePrinterAsync(ShopRequest.PrinterDelete request);
-
-    // Sale
-    Task<int> CreateSaleAsync(ShopRequest.SaleMutate request);
-    Task DeleteSaleAsync(ShopRequest.SaleDelete request);
-
 }

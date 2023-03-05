@@ -44,16 +44,4 @@ public class ShopController : ControllerBase
 		await _shopService.DeletePrinterAsync(request);
 		return Ok();
 	}
-
-	[HttpPut("AddSale")]
-	public async Task<int> CreateSaleAsync([FromBody] ShopRequest.SaleMutate request)
-	{
-		return await _shopService.CreateSaleAsync(request);
-	}
-
-	[HttpPut("RemoveSale")]
-	public async Task DeleteSaleAsync([FromBody] ShopRequest.SaleDelete request)
-	{
-		await _shopService.DeleteSaleAsync(request);
-	}
 }

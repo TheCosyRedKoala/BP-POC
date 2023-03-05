@@ -1,6 +1,5 @@
 ﻿using BP_POC.Domain.Exceptions;
 using BP_POC.Domain.Printers;
-using BP_POC.Domain.Sales;
 using BP_POC.Domain.Shops;
 using BP_POC.Management.Shared.Printers;
 using BP_POC.Management.Shared.Sales;
@@ -118,59 +117,6 @@ public class ShopService : IShopService
         }
 
         shop.RemovePrinter(printer);
-
-        await _context.SaveChangesAsync();
-    }
-
-    public async Task<int> CreateSaleAsync(ShopRequest.SaleMutate request)
-    {
-        Shop? shop = await _context.Shops
-            .Include(s => s.Printers)
-            .Include(s => s.Sales)
-            .FirstOrDefaultAsync(s => request.ShopId == s.Id);
-
-        if (shop is null)
-        {
-            throw new EntityNotFoundException(nameof(Shop), request.ShopId);
-        }
-
-        Printer? printer = shop.Printers
-            .FirstOrDefault(p => request.PrinterId == p.Id);
-
-        if (printer is null)
-        {
-            throw new EntityNotFoundException(nameof(Printer), request.PrinterId);
-        }
-
-        Sale sale = new(request.Sale.TotalAmount, printer);
-
-        shop.AddSale(sale);
-
-        await _context.SaveChangesAsync();
-
-        return sale.Id;
-    }
-
-    public async Task DeleteSaleAsync(ShopRequest.SaleDelete request)
-    {
-        Shop? shop = await _context.Shops
-            .Include(s => s.Sales)
-            .FirstOrDefaultAsync(s => request.ShopId == s.Id);
-
-        if (shop is null)
-        {
-            throw new EntityNotFoundException(nameof(Shop), request.ShopId);
-        }
-
-        Sale? sale = await _context.Sales
-            .FirstOrDefaultAsync(s => request.SaleId == s.Id);
-
-        if (sale is null)
-        {
-            throw new EntityNotFoundException(nameof(Sale), request.SaleId);
-        }
-
-        shop.RemoveSale(sale);
 
         await _context.SaveChangesAsync();
     }
