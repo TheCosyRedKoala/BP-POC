@@ -1,9 +1,10 @@
-﻿using BP_POC.Domain.Printers;
+﻿using BP_POC.Domain.Common;
+using BP_POC.Domain.Printers;
 using BP_POC.Domain.Sales;
 
 namespace BP_POC.Domain.Shops;
 
-public class Shop
+public class Shop : Entity
 {
     private List<Sale> _sales = new();
     private List<Printer> _printers = new();
