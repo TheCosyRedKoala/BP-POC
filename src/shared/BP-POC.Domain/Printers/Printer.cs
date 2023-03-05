@@ -1,6 +1,8 @@
-﻿namespace BP_POC.Domain.Printers;
+﻿using BP_POC.Domain.Common;
 
-public class Printer
+namespace BP_POC.Domain.Printers;
+
+public class Printer : Entity
 {
     private List<PriceTier> _priceTiers = new();
 
