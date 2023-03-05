@@ -19,7 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Domain.Tests", "test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Management.Shared", "src\management\BP-POC.Management.Shared\BP-POC.Management.Shared.csproj", "{FBEC6B1E-1E5C-4F7F-BA11-163DD32BC5E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Persistence", "src\shared\BP-POC.Persistence\BP-POC.Persistence.csproj", "{5D69E5B4-8F1E-426D-8B27-9DFC50B6D0FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Persistence", "src\shared\BP-POC.Persistence\BP-POC.Persistence.csproj", "{5D69E5B4-8F1E-426D-8B27-9DFC50B6D0FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Management.Services", "src\management\BP-POC.Management.Services\BP-POC.Management.Services.csproj", "{8E1FCA27-D0F6-4780-B4D4-460636F12FCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Management.Api", "src\management\BP-POC.Management.Api\BP-POC.Management.Api.csproj", "{E7BC8E24-59E9-48DE-BDAE-B3E7183F2A83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,14 @@ Global
 		{5D69E5B4-8F1E-426D-8B27-9DFC50B6D0FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D69E5B4-8F1E-426D-8B27-9DFC50B6D0FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D69E5B4-8F1E-426D-8B27-9DFC50B6D0FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E1FCA27-D0F6-4780-B4D4-460636F12FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E1FCA27-D0F6-4780-B4D4-460636F12FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E1FCA27-D0F6-4780-B4D4-460636F12FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E1FCA27-D0F6-4780-B4D4-460636F12FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7BC8E24-59E9-48DE-BDAE-B3E7183F2A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7BC8E24-59E9-48DE-BDAE-B3E7183F2A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7BC8E24-59E9-48DE-BDAE-B3E7183F2A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7BC8E24-59E9-48DE-BDAE-B3E7183F2A83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +67,8 @@ Global
 		{6F5F0C3B-E5AE-4DBA-AC69-E3C39FE175C8} = {E82E60E0-6CC3-4CE9-93B8-BFBAD98253AA}
 		{FBEC6B1E-1E5C-4F7F-BA11-163DD32BC5E4} = {6CD9727A-ADCA-4DBF-AF2A-324EF0E333AD}
 		{5D69E5B4-8F1E-426D-8B27-9DFC50B6D0FA} = {19800324-E51C-4FD3-94E8-94A40E455F4F}
+		{8E1FCA27-D0F6-4780-B4D4-460636F12FCC} = {6CD9727A-ADCA-4DBF-AF2A-324EF0E333AD}
+		{E7BC8E24-59E9-48DE-BDAE-B3E7183F2A83} = {6CD9727A-ADCA-4DBF-AF2A-324EF0E333AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B2CD9A9-59C8-4673-A9B7-0F5AF69AEDA1}

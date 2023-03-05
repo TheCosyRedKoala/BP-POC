@@ -7,5 +7,5 @@ public interface IPrinterService
     Task<PrinterDto.Detail> GetByIdAsync(int id);
 
     // PriceTier
-    Task CreatePriceTierAsync(PriceTierDto.Mutate model);
+    Task<int> CreatePriceTierAsync(PrinterRequest.PriceTierMutate request);
 }

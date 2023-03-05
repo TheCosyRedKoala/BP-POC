@@ -1,6 +1,6 @@
 ﻿namespace BP_POC.Domain.Exceptions;
 
-public class EntityNotFoundException
+public class EntityNotFoundException : ApplicationException
 {
     /// <param name="entityName">Name / type of the <see cref="Entity"/>.</param>
     /// <param name="id">The identifier of the duplicate key.</param>

@@ -15,6 +15,13 @@ public class Printer : Entity
     public IReadOnlyList<PriceTier> PriceTiers => _priceTiers.AsReadOnly();
 
     /// <summary>
+    /// EF constructor
+    /// </summary>
+    protected Printer()
+    {
+
+    }
+    /// <summary>
     /// Domain constructor
     /// </summary>
     /// <param name="name"></param>

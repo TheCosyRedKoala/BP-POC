@@ -6,16 +6,16 @@ namespace BP_POC.Management.Shared.Shops;
 public interface IShopService
 {
     // Shop
-    Task CreateAsync();
-    Task GetIndexAsync();
-    Task GetDetailAsync();
+    Task<int> CreateAsync(ShopDto.Mutate model);
+    Task<List<ShopDto.Index>> GetIndexAsync();
+    Task<ShopDto.Detail> GetByIdAsync(int id);
 
     // Printer
-    Task<int> CreatePrinterAsync(PrinterDto.Mutate model);
-    Task DeletePrinterAsync(int id);
+    Task<int> CreatePrinterAsync(ShopRequest.PrinterMutate request);
+    Task DeletePrinterAsync(ShopRequest.PrinterDelete request);
 
     // Sale
-    Task<int> CreateSaleAsync(SaleDto.Mutate model);
-    Task DeleteSaleAsync(int id);
+    Task<int> CreateSaleAsync(ShopRequest.SaleMutate request);
+    Task DeleteSaleAsync(ShopRequest.SaleDelete request);
 
 }

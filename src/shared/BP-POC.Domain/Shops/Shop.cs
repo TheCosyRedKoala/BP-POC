@@ -24,7 +24,14 @@ public class Shop : Entity
     /// Returns the list of printers as an IReadOnlyList
     /// </summary>
     public IReadOnlyList<Printer> Printers => _printers.AsReadOnly();
+    
+    /// <summary>
+    /// EF constructor
+    /// </summary>
+    protected Shop()
+    {
 
+    }
     /// <summary>
     /// Domain constructor
     /// </summary>

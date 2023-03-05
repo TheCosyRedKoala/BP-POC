@@ -9,6 +9,13 @@ public class PriceTier : Entity
     public double Price { get; private set; }
 
     /// <summary>
+    /// EF constructor
+    /// </summary>
+    protected PriceTier()
+    {
+
+    }
+    /// <summary>
     /// Domain constructor
     /// </summary>
     /// <param name="floor">The inclusive floor of the price tier</param>

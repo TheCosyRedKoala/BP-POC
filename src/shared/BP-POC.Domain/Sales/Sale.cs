@@ -10,6 +10,13 @@ public class Sale : Entity
     public Printer Printer { get; }
 
     /// <summary>
+    /// EF constructor
+    /// </summary>
+    protected Sale()
+    {
+
+    }
+    /// <summary>
     /// Domain constructor
     /// </summary>
     /// <param name="totalAmount">The total amount payed for the sale</param>

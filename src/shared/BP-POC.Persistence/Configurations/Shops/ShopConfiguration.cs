@@ -31,5 +31,7 @@ internal class ShopConfiguration : EntityConfiguration<Shop>
             address.Property(a => a.Country)
                 .HasColumnName(nameof(Address.Country));
         });
+
+        builder.Ignore(s => s.TodaySales);
     }
 }
