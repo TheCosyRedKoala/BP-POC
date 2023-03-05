@@ -1,6 +1,8 @@
-﻿namespace BP_POC.Domain.Shops;
+﻿using BP_POC.Domain.Common;
 
-public class Address
+namespace BP_POC.Domain.Shops;
+
+public class Address : ValueObject
 {
     public string AddressLine1 { get; }
     public string? AddressLine2 { get; }
@@ -23,5 +25,14 @@ public class Address
         City = Guard.Against.NullOrWhiteSpace(city, nameof(city));
         PostalCode = Guard.Against.NullOrWhiteSpace(postalCode, nameof(postalCode));
         Country = Guard.Against.NullOrWhiteSpace(country, nameof(country));
+    }
+
+    protected override IEnumerable<object?> GetEqualityComponents()
+    {
+        yield return AddressLine1;
+        yield return AddressLine2;
+        yield return City;
+        yield return PostalCode;
+        yield return Country;
     }
 }
