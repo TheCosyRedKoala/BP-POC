@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using BP_POC.Operations.Client.Shared.Components
+
+@inherits LayoutComponentBase
 
 <MudThemeProvider />
 <MudDialogProvider />
@@ -10,7 +12,7 @@
         <MudText Typo="Typo.h5" Class="ml-3">PrinterShop Operations</MudText>
     </MudAppBar>
     <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
-        @*NavMenu*@
+        <NavMenu />
     </MudDrawer>
     <MudMainContent Class="mx-5 my-5">
         @Body
