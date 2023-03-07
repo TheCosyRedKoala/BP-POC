@@ -8,6 +8,8 @@ internal class ShopConfiguration : EntityConfiguration<Shop>
 {
     public override void Configure(EntityTypeBuilder<Shop> builder)
     {
+        base.Configure(builder);
+
         builder.HasMany(s => s.Sales)
             .WithOne();
 
