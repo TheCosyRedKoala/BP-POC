@@ -1,6 +1,4 @@
-﻿using BP_POC.Management.Shared.Printers;
-
-namespace BP_POC.Management.Shared.Sales;
+﻿namespace BP_POC.Management.Shared.Sales;
 
 public static class SaleDto
 {
