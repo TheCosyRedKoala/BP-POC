@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Operations.Services"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Operations.Api", "src\operations\BP-POC.Operations.Api\BP-POC.Operations.Api.csproj", "{E08C8173-DE0B-420A-AF65-F1E6E3265DAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Operations.Client", "src\operations\BP-POC.Operations.Client\BP-POC.Operations.Client.csproj", "{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,12 @@ Global
 		{E08C8173-DE0B-420A-AF65-F1E6E3265DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E08C8173-DE0B-420A-AF65-F1E6E3265DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E08C8173-DE0B-420A-AF65-F1E6E3265DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{196207B9-1D9F-4800-BAD4-5DCCBC243C43} = {3BF885E6-856C-4F9D-A02A-05E395F1C977}
 		{08D4CD53-FE57-49BD-8EF2-549674C12BA9} = {3BF885E6-856C-4F9D-A02A-05E395F1C977}
 		{E08C8173-DE0B-420A-AF65-F1E6E3265DAD} = {3BF885E6-856C-4F9D-A02A-05E395F1C977}
+		{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51} = {3BF885E6-856C-4F9D-A02A-05E395F1C977}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B2CD9A9-59C8-4673-A9B7-0F5AF69AEDA1}
