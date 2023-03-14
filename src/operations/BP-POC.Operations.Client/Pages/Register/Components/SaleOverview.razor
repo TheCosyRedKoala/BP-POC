@@ -1,0 +1,57 @@
+﻿<div class="mud-width-full d-flex flex-column justify-space-between">
+    <div>
+        <MudTable Items="Sales" Hover="true" Class="mud-width-full h-100">
+            <HeaderContent>
+                <MudTh>
+                    Printer
+                </MudTh>
+                <MudTh>
+                    Amount Printed
+                </MudTh>
+                <MudTh>
+                    Active Price Tier Price
+                </MudTh>
+                <MudTh>
+                    Total Amount
+                </MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd>
+                    @context.PrinterName
+                </MudTd>
+                <MudTd>
+                    @context.AmountPrinted
+                </MudTd>
+                <MudTd>
+                    @context.ActivePriceTierPrice
+                </MudTd>
+                <MudTd>
+                    @context.TotalAmount
+                </MudTd>
+            </RowTemplate>
+            <FooterContent>
+                <MudTd>
+
+                </MudTd>
+                <MudTd>
+
+                </MudTd>
+                <MudTd>
+                    Total Amount
+                </MudTd>
+                <MudTd>
+                    @TotalPaymentAmount
+                </MudTd>
+            </FooterContent>
+        </MudTable>
+    </div>
+
+    <div>
+        <MudButton FullWidth="true" Color="@Color.Info" StartIcon="@Icons.Material.Filled.Payments" Variant="@Variant.Filled" Class="mb-3" OnClick="HandleRegisterPaymentClick">
+            Register payment
+        </MudButton>
+        <MudButton FullWidth="true" Color="@Color.Dark" StartIcon="@Icons.Material.Filled.LockClock" Variant="@Variant.Filled">
+            Close register
+        </MudButton>
+    </div>
+</div>

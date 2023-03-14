@@ -1,0 +1,13 @@
+﻿@page "/"
+@using BP_POC.Operations.Client.Pages.Register.Components
+
+@if (_printers is null) 
+{
+    <span>
+        Loading...
+    </span>
+}
+else
+{
+    <RegisterScreen Printers="_printers" Sales="_sales" CalculateTotalAmount="CalculateTotalAmount" TotalPaymentAmount="_totalPaymentAmount" ClearSalesOverviewScreen="ClearSalesOverviewScreen" />
+}

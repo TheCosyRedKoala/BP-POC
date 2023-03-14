@@ -25,13 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Management.Api", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "operations", "operations", "{3BF885E6-856C-4F9D-A02A-05E395F1C977}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Operations.Shared", "src\operations\BP-POC.Operations.Shared\BP-POC.Operations.Shared.csproj", "{196207B9-1D9F-4800-BAD4-5DCCBC243C43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Operations.Shared", "src\operations\BP-POC.Operations.Shared\BP-POC.Operations.Shared.csproj", "{196207B9-1D9F-4800-BAD4-5DCCBC243C43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Operations.Services", "src\operations\BP-POC.Operations.Services\BP-POC.Operations.Services.csproj", "{08D4CD53-FE57-49BD-8EF2-549674C12BA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Operations.Services", "src\operations\BP-POC.Operations.Services\BP-POC.Operations.Services.csproj", "{08D4CD53-FE57-49BD-8EF2-549674C12BA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Operations.Api", "src\operations\BP-POC.Operations.Api\BP-POC.Operations.Api.csproj", "{E08C8173-DE0B-420A-AF65-F1E6E3265DAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Operations.Api", "src\operations\BP-POC.Operations.Api\BP-POC.Operations.Api.csproj", "{E08C8173-DE0B-420A-AF65-F1E6E3265DAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Operations.Client", "src\operations\BP-POC.Operations.Client\BP-POC.Operations.Client.csproj", "{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Operations.Client", "src\operations\BP-POC.Operations.Client\BP-POC.Operations.Client.csproj", "{C5C080BA-1E19-41F1-AFC3-9EFFD107AE51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

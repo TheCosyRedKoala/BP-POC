@@ -28,15 +28,7 @@ public class SaleService : ISaleService
             throw new EntityNotFoundException(nameof(Shop), request.ShopId);
         }
 
-        Printer? printer = await _context.Printers
-            .FirstOrDefaultAsync(p => request.PrinterId == p.Id);
-
-        if (printer is null) 
-        {
-            throw new EntityNotFoundException(nameof(Printer), request.PrinterId);
-        }
-
-        Sale sale = new(request.Sale.TotalAmount, printer);
+        Sale sale = new(request.Sale.TotalAmount);
 
         shop.AddSale(sale);
 
@@ -60,7 +52,6 @@ public class SaleService : ISaleService
     public async Task<SaleDto.Detail> GetByIdAsync(int id)
     {
         Sale? sale = await _context.Sales
-            .Include(s => s.Printer)
             .FirstOrDefaultAsync(s => id == s.Id);
 
         if (sale is null)
@@ -72,12 +63,7 @@ public class SaleService : ISaleService
         {
             Id = sale.Id,
             DateOfSale = sale.DateOfSale,
-            TotalAmount = sale.TotalAmount,
-            Printer = new PrinterDto.Index
-            {
-                Id = sale.Printer.Id,
-                Name = sale.Printer.Name
-            }
+            TotalAmount = sale.TotalAmount
         };
     }
 }

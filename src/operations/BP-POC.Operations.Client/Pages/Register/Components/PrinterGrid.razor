@@ -1,0 +1,11 @@
+﻿<MudGrid Class="mx-5" Style="height: 100%">
+    @foreach(var printer in Printers)
+    {
+        <MudItem xs="4">
+            <MudButton Variant="Variant.Filled" Class="d-flex align-center justify-center mud-width-full py-8" Color="@Color.Primary" OnClick="@(() => HandleCalculateTotalAmountClick(printer.Id, printer.AmountPrinted))">
+                @printer.Name
+            </MudButton>
+            <MudNumericField @bind-Value="@printer.AmountPrinted" Class="mud-width-full" Disabled="true" />
+        </MudItem>
+    }
+</MudGrid>

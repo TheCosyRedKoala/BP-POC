@@ -1,6 +1,8 @@
 using BP_POC.Operations.Services;
 using BP_POC.Persistence;
 using Microsoft.EntityFrameworkCore;
+using BP_POC.Operations.Api.Hubs;
+using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
     // Add REST services
 builder.Services.AddRestServices();
+
+// SignalR
+builder.Services.AddSignalR();
+builder.Services.AddResponseCompression(options =>
+{
+    options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        new[] { "application/octet-stream" });
+});
 
 // Swagger | OAS
 builder.Services.AddEndpointsApiExplorer();
@@ -29,6 +39,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 var app = builder.Build();
 
+// Response Compression
+app.UseResponseCompression();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -40,6 +53,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+// Endpoint mapping
+    // REST
 app.MapControllers();
+    // Hubs
+app.MapHub<PrinterHub>("/printerhub");
 
 app.Run();

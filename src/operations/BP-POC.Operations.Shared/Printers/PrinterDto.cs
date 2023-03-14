@@ -6,6 +6,7 @@ public static class PrinterDto
     {
         public int Id { get; set; }
         public string Name { get; set; } = default!;
+        public int AmountPrinted { get; set; } = 0;
     }
 
     public class Detail

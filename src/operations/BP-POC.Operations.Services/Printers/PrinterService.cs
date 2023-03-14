@@ -2,6 +2,7 @@
 using BP_POC.Domain.Printers;
 using BP_POC.Domain.Shops;
 using BP_POC.Operations.Shared.Printers;
+using BP_POC.Operations.Shared.Sales;
 using BP_POC.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -71,6 +72,29 @@ public class PrinterService : IPrinterService
                     Price = pt.Price
                 })
                 .ToList()
+        };
+    }
+
+    public async Task<SaleDto.CalculatedSale> CalculateTotalAmountAsync(PrinterRequest.CalculateTotalAmount request)
+    {
+        Printer? printer = await _context.Printers
+            .Include(p => p.PriceTiers)
+            .FirstOrDefaultAsync(p => request.PrinterId == p.Id);
+
+        if (printer is null)
+        {
+            throw new EntityNotFoundException(nameof(Printer), request.PrinterId);
+        }
+
+        double totalAmount = printer.CalculateTotalAmount(request.AmountPrinted);
+
+        return new SaleDto.CalculatedSale
+        {
+            PrinterId = printer.Id,
+            PrinterName = printer.Name,
+            AmountPrinted = request.AmountPrinted,
+            ActivePriceTierPrice = printer.PriceTiers.First(pt => request.AmountPrinted >= pt.Floor && request.AmountPrinted <= pt.Ceiling).Price,
+            TotalAmount = totalAmount
         };
     }
 }
