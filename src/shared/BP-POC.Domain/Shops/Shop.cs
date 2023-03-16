@@ -1,5 +1,6 @@
 ﻿using BP_POC.Domain.Common;
 using BP_POC.Domain.Printers;
+using BP_POC.Domain.Reports;
 using BP_POC.Domain.Sales;
 
 namespace BP_POC.Domain.Shops;
@@ -8,6 +9,7 @@ public class Shop : Entity
 {
     private List<Sale> _sales = new();
     private List<Printer> _printers = new();
+    private List<Report> _reports = new();
 
     public string Name { get; private set; }
     public Address Address { get; private set; }
@@ -24,6 +26,10 @@ public class Shop : Entity
     /// Returns the list of printers as an IReadOnlyList
     /// </summary>
     public IReadOnlyList<Printer> Printers => _printers.AsReadOnly();
+    /// <summary>
+    /// Returns the list of reports as an IReadOnlyList
+    /// </summary>
+    public IReadOnlyList<Report> Reports => _reports.AsReadOnly();
     
     /// <summary>
     /// EF constructor

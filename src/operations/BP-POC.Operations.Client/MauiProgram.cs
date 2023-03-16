@@ -24,6 +24,9 @@ public static class MauiProgram
             .AddHttpClient("BP-POC.OperationsApi", client => client.BaseAddress = new Uri("https://localhost:7057"));
 
         builder.Services
+            .AddHttpClient("BP-POC.ManagementApi", client => client.BaseAddress = new Uri("https://localhost:7226"));
+
+        builder.Services
             .AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>()
             .CreateClient("BP-POC.OperationsApi"));
 

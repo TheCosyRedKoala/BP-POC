@@ -32,4 +32,14 @@ public partial class SaleOverview
 
         Snackbar.Add("Sale successfully registrated", Severity.Success);
     }
+
+    private async Task HandleRegisterEndOfDayClick()
+    {
+        bool success = await SaleService.RegisterEndOfDay(1);
+
+        if (success)
+        {
+            Snackbar.Add("Register successfully closed", Severity.Success);
+        }
+    }
 }

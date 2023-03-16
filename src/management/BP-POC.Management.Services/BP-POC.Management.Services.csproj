@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\reporting\BP-POC.Reporting.Shared\BP-POC.Reporting.Shared.csproj" />
     <ProjectReference Include="..\..\shared\BP-POC.Domain\BP-POC.Domain.csproj" />
     <ProjectReference Include="..\..\shared\BP-POC.Persistence\BP-POC.Persistence.csproj" />
     <ProjectReference Include="..\BP-POC.Management.Shared\BP-POC.Management.Shared.csproj" />

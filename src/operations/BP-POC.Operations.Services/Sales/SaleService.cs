@@ -66,4 +66,9 @@ public class SaleService : ISaleService
             TotalAmount = sale.TotalAmount
         };
     }
+
+    public Task<bool> RegisterEndOfDay(int shopId)
+    {
+        throw new NotImplementedException();
+    }
 }

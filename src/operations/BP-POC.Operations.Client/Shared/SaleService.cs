@@ -6,11 +6,14 @@ namespace BP_POC.Operations.Client.Shared;
 public class SaleService : ISaleService
 {
     private readonly HttpClient _client;
+    private readonly HttpClient _managementClient;
     private const string endpoint = "api/sale";
+    private const string managementEndpoint = "api/shop";
 
-    public SaleService(HttpClient client)
+    public SaleService(HttpClient client, IHttpClientFactory clientFactory)
     {
         _client = client;
+        _managementClient = clientFactory.CreateClient("BP-POC.ManagementApi");
     }
 
     public async Task<int> CreateAsync(SaleRequest.Mutate request)
@@ -27,5 +30,11 @@ public class SaleService : ISaleService
     public Task<List<SaleDto.Index>> GetIndexAsync()
     {
         throw new NotImplementedException();
+    }
+
+    public async Task<bool> RegisterEndOfDay(int shopId)
+    {
+        var response = await _managementClient.GetFromJsonAsync<bool>($"{managementEndpoint}/{shopId}/endofday");
+        return response;
     }
 }

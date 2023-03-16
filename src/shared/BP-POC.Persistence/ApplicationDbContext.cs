@@ -1,4 +1,5 @@
 ﻿using BP_POC.Domain.Printers;
+using BP_POC.Domain.Reports;
 using BP_POC.Domain.Sales;
 using BP_POC.Domain.Shops;
 using BP_POC.Persistence.Triggers;
@@ -12,6 +13,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Shop> Shops => Set<Shop>();
     public DbSet<Printer> Printers => Set<Printer>();
     public DbSet<Sale> Sales => Set<Sale>();
+    public DbSet<Report> Reports => Set<Report>();
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 

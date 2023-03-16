@@ -6,6 +6,7 @@ public interface IShopService
     Task<int> CreateAsync(ShopDto.Mutate model);
     Task<List<ShopDto.Index>> GetIndexAsync();
     Task<ShopDto.Detail> GetByIdAsync(int id);
+    Task RegisterEndOfDay(int id);
 
     // Printer
     Task<int> CreatePrinterAsync(ShopRequest.PrinterMutate request);

@@ -44,4 +44,11 @@ public class ShopController : ControllerBase
 		await _shopService.DeletePrinterAsync(request);
 		return Ok();
 	}
+
+    [HttpGet("{id}/endofday")]
+    public async Task<bool> RegisterEndOfDay(int id)
+    {
+        await _shopService.RegisterEndOfDay(id);
+		return true;
+    }
 }

@@ -16,6 +16,10 @@ internal class ShopConfiguration : EntityConfiguration<Shop>
         builder.HasMany(s => s.Printers)
             .WithOne();
 
+        builder.HasMany(s => s.Reports)
+            .WithOne()
+            .HasForeignKey(r => r.ShopId);
+
         builder.OwnsOne(s => s.Address, address =>
         {
             address.Property(a => a.AddressLine1)

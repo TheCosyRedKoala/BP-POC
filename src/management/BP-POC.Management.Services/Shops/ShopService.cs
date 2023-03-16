@@ -1,21 +1,28 @@
-﻿using BP_POC.Domain.Exceptions;
+﻿using Azure.Core;
+using BP_POC.Domain.Exceptions;
 using BP_POC.Domain.Printers;
+using BP_POC.Domain.Sales;
 using BP_POC.Domain.Shops;
 using BP_POC.Management.Shared.Printers;
 using BP_POC.Management.Shared.Sales;
 using BP_POC.Management.Shared.Shops;
 using BP_POC.Persistence;
+using BP_POC.Reporting.Shared.Reports;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http.Json;
 
 namespace BP_POC.Management.Services.Shops;
 
 public class ShopService : IShopService
 {
     private readonly ApplicationDbContext _context;
+    private readonly HttpClient _client;
+    private const string _endpoint = "api/report";
 
-    public ShopService(ApplicationDbContext context)
+    public ShopService(ApplicationDbContext context, HttpClient client)
     {
         _context = context;
+        _client = client;
     }
 
     public async Task<int> CreateAsync(ShopDto.Mutate model)
@@ -119,5 +126,28 @@ public class ShopService : IShopService
         shop.RemovePrinter(printer);
 
         await _context.SaveChangesAsync();
+    }
+
+    public async Task RegisterEndOfDay(int id)
+    {
+        Shop? shop = await _context.Shops
+            .Include(s => s.Sales)
+            .FirstOrDefaultAsync(s => id == s.Id);
+
+        if (shop is null)
+        {
+            throw new EntityNotFoundException(nameof(Shop), id);
+        }
+
+        IReadOnlyList<Sale> sales = shop.TodaySales;
+
+        ReportDto.Mutate report = new()
+        {
+            DayOfSale = DateTime.UtcNow,
+            TotalRevenue = sales.Sum(s => s.TotalAmount),
+            ShopId = id
+        };
+
+        await _client.PostAsJsonAsync(_endpoint, report);
     }
 }

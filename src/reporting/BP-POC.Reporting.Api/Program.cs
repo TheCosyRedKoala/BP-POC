@@ -1,8 +1,10 @@
-using BP_POC.Management.Services;
 using BP_POC.Persistence;
+using BP_POC.Reporting.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
 
 // Add services to the container.
     // Add controllers
@@ -27,10 +29,6 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     );
 });
 
-// HTTP client
-builder.Services.AddHttpClient("BP-POC.ReportingApi", client => client.BaseAddress = new Uri(builder.Configuration.GetConnectionString("ReportingApi")));
-builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("BP-POC.ReportingApi"));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -45,11 +43,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-using (var scope = app.Services.CreateScope())
-{
-    ApplicationDbContext context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    context.Database.Migrate();
-}
 
 app.Run();

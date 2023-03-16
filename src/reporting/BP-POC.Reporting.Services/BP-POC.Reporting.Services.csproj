@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>BP_POC.Reporting.Services</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\BP-POC.Persistence\BP-POC.Persistence.csproj" />
+    <ProjectReference Include="..\BP-POC.Reporting.Shared\BP-POC.Reporting.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
