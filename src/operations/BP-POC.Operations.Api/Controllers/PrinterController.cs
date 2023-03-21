@@ -38,9 +38,10 @@ public class PrinterController : ControllerBase
     }
 
     [HttpPatch("{id}")]
-    public async Task RegisterPrinterClickAsync(int id)
+    public async Task<IActionResult> RegisterPrinterClickAsync(int id)
     {
         await _printerHub.Clients.All.SendAsync("ReceivePrintClick", id);
+        return Ok();
     }
 
     [HttpPost("CalculateTotalAmount")]

@@ -35,11 +35,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Operations.Client", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "reporting", "reporting", "{27996919-24F2-4AE8-ABA4-9DBF7F27625A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Reporting.Api", "src\reporting\BP-POC.Reporting.Api\BP-POC.Reporting.Api.csproj", "{8696DEBB-D543-4639-85F2-56B99FB88C96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Reporting.Api", "src\reporting\BP-POC.Reporting.Api\BP-POC.Reporting.Api.csproj", "{8696DEBB-D543-4639-85F2-56B99FB88C96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Reporting.Shared", "src\reporting\BP-POC.Reporting.Shared\BP-POC.Reporting.Shared.csproj", "{47135116-34F8-48CC-A960-C342F4302FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Reporting.Shared", "src\reporting\BP-POC.Reporting.Shared\BP-POC.Reporting.Shared.csproj", "{47135116-34F8-48CC-A960-C342F4302FCA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Reporting.Services", "src\reporting\BP-POC.Reporting.Services\BP-POC.Reporting.Services.csproj", "{24E6BDD5-818D-4C40-B424-113FE9BF394E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Reporting.Services", "src\reporting\BP-POC.Reporting.Services\BP-POC.Reporting.Services.csproj", "{24E6BDD5-818D-4C40-B424-113FE9BF394E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BP-POC.Reporting.Client", "src\reporting\BP-POC.Reporting.Client\BP-POC.Reporting.Client.csproj", "{0B0DE180-C5F1-418D-A9DC-883B82C16ECB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tooling", "tooling", "{BA6B7129-025E-465F-A54F-1102C503A4EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "timeregistration", "timeregistration", "{52DED7D8-32EB-4BB7-8480-8B1A71BA5988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BP-POC.Tooling.TimeRegistration.CLI", "tooling\timeregistration\BP-POC.Tooling.TimeRegistration.CLI\BP-POC.Tooling.TimeRegistration.CLI.csproj", "{121F2053-F774-4E5F-A6BB-94DDA14051E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +109,16 @@ Global
 		{24E6BDD5-818D-4C40-B424-113FE9BF394E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24E6BDD5-818D-4C40-B424-113FE9BF394E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24E6BDD5-818D-4C40-B424-113FE9BF394E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0DE180-C5F1-418D-A9DC-883B82C16ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B0DE180-C5F1-418D-A9DC-883B82C16ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B0DE180-C5F1-418D-A9DC-883B82C16ECB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0B0DE180-C5F1-418D-A9DC-883B82C16ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B0DE180-C5F1-418D-A9DC-883B82C16ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B0DE180-C5F1-418D-A9DC-883B82C16ECB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{121F2053-F774-4E5F-A6BB-94DDA14051E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{121F2053-F774-4E5F-A6BB-94DDA14051E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{121F2053-F774-4E5F-A6BB-94DDA14051E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{121F2053-F774-4E5F-A6BB-94DDA14051E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +141,9 @@ Global
 		{8696DEBB-D543-4639-85F2-56B99FB88C96} = {27996919-24F2-4AE8-ABA4-9DBF7F27625A}
 		{47135116-34F8-48CC-A960-C342F4302FCA} = {27996919-24F2-4AE8-ABA4-9DBF7F27625A}
 		{24E6BDD5-818D-4C40-B424-113FE9BF394E} = {27996919-24F2-4AE8-ABA4-9DBF7F27625A}
+		{0B0DE180-C5F1-418D-A9DC-883B82C16ECB} = {27996919-24F2-4AE8-ABA4-9DBF7F27625A}
+		{52DED7D8-32EB-4BB7-8480-8B1A71BA5988} = {BA6B7129-025E-465F-A54F-1102C503A4EA}
+		{121F2053-F774-4E5F-A6BB-94DDA14051E8} = {52DED7D8-32EB-4BB7-8480-8B1A71BA5988}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B2CD9A9-59C8-4673-A9B7-0F5AF69AEDA1}

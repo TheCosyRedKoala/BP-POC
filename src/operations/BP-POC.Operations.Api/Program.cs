@@ -11,8 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
     // Add REST services
 builder.Services.AddRestServices();
-
-// SignalR
+    // SignalR
 builder.Services.AddSignalR();
 builder.Services.AddResponseCompression(options =>
 {

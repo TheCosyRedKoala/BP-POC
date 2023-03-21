@@ -1,5 +1,7 @@
 using BP_POC.Persistence;
+using BP_POC.Reporting.Api.Hubs;
 using BP_POC.Reporting.Services;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
     // Add REST services
 builder.Services.AddRestServices();
+    // SignalR
+builder.Services.AddSignalR();
+builder.Services.AddResponseCompression(options =>
+{
+    options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        new[] { "application/octet-stream" });
+});
 
 // Swagger | OAS
 builder.Services.AddEndpointsApiExplorer();
@@ -42,6 +51,10 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+// Endpoint mapping
+    // REST
 app.MapControllers();
+    // Hubs
+app.MapHub<ReportHub>("/printerhub");
 
 app.Run();

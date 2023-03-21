@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "BP-POC.Operations.Shared": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:60235;http://localhost:60239"
+    }
+  }
+}
